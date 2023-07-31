@@ -26,7 +26,14 @@ const whenExternalScripts = (items = []) =>
 export default defineConfig({
   site: SITE_CONFIG.site,
   base: SITE_CONFIG.base,
-  trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
+  // trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
+  trailingSlash: 'never',
+  build: {
+    // Example: Generate `page.html` instead of `page/index.html` during build.
+    format: 'file',
+    assets: '_assets',
+    inlineStylesheets: 'auto',
+  },
 
   output: 'static',
 
